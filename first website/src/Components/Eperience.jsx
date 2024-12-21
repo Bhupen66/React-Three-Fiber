@@ -1,14 +1,14 @@
 import React from 'react'
 import {OrbitControls} from '@react-three/drei'
 
-function Eperience() {
+const Eperience = () => {
   return (
     <>
         <OrbitControls />
-        <mash>
+        <mesh>
             <boxGeometry attach="geometry" args={[1, 1, 1]} />
             <meshNormalMaterial attach="material" />
-        </mash>
+        </mesh>
     </>
   )
 }

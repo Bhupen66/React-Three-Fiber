@@ -5,7 +5,7 @@ function Background() {
   return (
     <>
         <Environment />
-        <Sphere args={[1, 100, 100]} >
+        <Sphere args={[100, 100, 100]} >
             <layerMaterial 
             lighting="physical"
             tranmission={1}
