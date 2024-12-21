@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <Canvas>
+      <Canvas className='canvas w-full h-screen'> 
         <color attach="background" args={["#ececec"]} />
         <Experience />
       </Canvas>
