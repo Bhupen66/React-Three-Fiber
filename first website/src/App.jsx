@@ -6,10 +6,12 @@ function App() {
 
   return (
     <>
+    <div className='bg-gray-200 h-screen flex items-center justify-center'>
       <Canvas className='canvas w-full h-screen'> 
-        <color attach="background" args={["#ececec"]} />
+        <color attach="gackground" args={["#ececec"]} />
         <Experience />
       </Canvas>
+      </div>
     </>
   )
 }

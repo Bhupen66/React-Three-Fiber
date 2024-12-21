@@ -14,9 +14,11 @@ function Background() {
             side={THREE.BackSide}
             >
                 <Gradient 
-                colorA={"blue"} 
-                coloeB={"red"}   
-                
+                colorA={"#61b4e8"} 
+                coloeB={"#61b4e8"}   
+                axes={"y"}
+                start={0}
+                end={0.5}
                 />
             </LayerMaterial>
         </Sphere>
