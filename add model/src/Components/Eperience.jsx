@@ -1,16 +1,14 @@
 import React from 'react'
 import {OrbitControls} from '@react-three/drei'
 import Background from './Background';
+import Deadpool from './Deadpool';
 
 const Eperience = () => {
   return (
     <>
         <OrbitControls />
         <Background />
-        <mesh>
-            <boxGeometry attach="geometry" args={[1, 1, 1]} />
-            <meshNormalMaterial attach="material" />
-        </mesh>
+        <Deadpool />
     </>
   )
 }
