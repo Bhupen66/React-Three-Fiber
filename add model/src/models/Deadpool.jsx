@@ -8,9 +8,13 @@ Title: DEADPOOL MARVEL (FREE)
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import Deadpool from '../assets/models/Deadpool.glb'
+
+
 
 const Deadpool = (props) => {
-  const { nodes, materials } = useGLTF('/deadpool_marvel_free.glb')
+  const { nodes, materials } = useGLTF('Deadpool')
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -35,6 +39,6 @@ const Deadpool = (props) => {
   )
 }
 
-useGLTF.preload('/deadpool_marvel_free.glb')
+useGLTF.preload('Deadpool')
 
 export default Deadpool
