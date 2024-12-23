@@ -5,8 +5,7 @@ import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Image, Environment, ScrollControls, useScroll, useTexture } from '@react-three/drei'
 import { easing } from 'maath'
-import './App.css'
-import './Utili.js'
+import './Utili.jsx'
 
 export const App = () => (
   <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
@@ -73,7 +72,7 @@ function Banner(props) {
   return (
     <mesh ref={ref} {...props}>
       <cylinderGeometry args={[1.6, 1.6, 0.14, 128, 16, true]} />
-      <meshStandardMaterial map={texture} map-anisotropy={16} map-repeat={[30, 1]} side={THREE.DoubleSide} toneMapped={false} />
+      <meshSineMaterial map={texture} map-anisotropy={16} map-repeat={[30, 1]} side={THREE.DoubleSide} toneMapped={false} />
     </mesh>
   )
 }
