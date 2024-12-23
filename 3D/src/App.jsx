@@ -5,9 +5,9 @@ import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Image, Environment, ScrollControls, useScroll, useTexture } from '@react-three/drei'
 import { easing } from 'maath'
-import './Utili.jsx'
+import './Utili'
 
-export const App = () => (
+const App = () => (
   <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
     <fog attach="fog" args={['#a79', 8.5, 12]} />
     <ScrollControls pages={4} infinite>
@@ -16,7 +16,7 @@ export const App = () => (
       </Rig>
       <Banner position={[0, -0.15, 0]} />
     </ScrollControls>
-    <Environment preset="dawn" background blur={0.5} />
+    <Environment preset="dawn" background blur={1} />
   </Canvas>
 )
 
@@ -76,3 +76,5 @@ function Banner(props) {
     </mesh>
   )
 }
+
+export default App
