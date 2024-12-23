@@ -6,28 +6,13 @@ Source: https://sketchfab.com/3d-models/deadpool-marvel-free-00b3f2ac5dac4e448ff
 Title: DEADPOOL MARVEL (FREE)
 */
 
-import React, { useRef } from "react";
-import { useGLTF, useFrame } from "@react-three/drei";
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 
-function Model(props) {
-  // Load the GLTF model
-  const { nodes, materials } = useGLTF("/models/Deadpool/deadpool_marvel_free.glb");
-
-  // Reference for animation
-  const helix = useRef();
-
-  // Constant speed for rotation animation
-  const HELIX_SPEED = 0.01;
-
-  // Animate the helix (or other parts if needed)
-  useFrame(() => {
-    if (helix.current) {
-      helix.current.rotation.x += HELIX_SPEED;
-    }
-  });
-
+const Deadpool = (props) => {
+  const { nodes, materials } = useGLTF('/deadpool_marvel_free.glb')
   return (
-    <group {...props} dispose={null} ref={helix}>
+    <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
@@ -47,9 +32,9 @@ function Model(props) {
         material={materials.material_0}
       />
     </group>
-  );
+  )
 }
 
-useGLTF.preload("/models/Deadpool/deadpool_marvel_free.glb");
+useGLTF.preload('/deadpool_marvel_free.glb')
 
-export default Model;
+export default Deadpool
