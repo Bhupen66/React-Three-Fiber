@@ -1,14 +1,15 @@
-import { Vector3, TextBufferGeometry } from "three"
+import { Vector3 } from "three"
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js"
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js"
 import React, { useCallback, useRef } from "react"
 import { useLoader, useFrame } from "@react-three/fiber"
 import { useAsset } from "use-asset"
 import lerp from "lerp"
-import state from "../store"
+import state from "../Store"
 
 function Text({ children, size = 1, left, right, top, bottom, color = "white", opacity = 1, height = 0.01, layers = 0, font = "/MOONGET_Heavy.blob", ...props }) {
   const data = useLoader(FontLoader, font)
-  const geom = useAsset(() => new Promise((res) => res(new TextBufferGeometry(children, { font: data, size: 1, height, curveSegments: 32 }))), [children])
+  const geom = useAsset(() => new Promise((res) => res(new TextGeometry(children, { font: data, size: 1, height, curveSegments: 32 }))), [children])
   const onUpdate = useCallback(
     (self) => {
       const box = new Vector3()
