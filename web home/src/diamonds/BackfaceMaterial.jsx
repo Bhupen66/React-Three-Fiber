@@ -22,3 +22,4 @@ export default class BackfaceMaterial extends ShaderMaterial {
     })
   }
 }
+ 
