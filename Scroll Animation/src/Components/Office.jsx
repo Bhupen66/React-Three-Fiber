@@ -5,9 +5,10 @@ Command: npx gltfjsx@6.5.3 WawaOffice.glb
 
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
+import Ofiice from '../../public/models/WawaOffice.glb'
 
 function Ofiice(props) {
-  const { nodes, materials } = useGLTF('./WawaOffice.glb')
+  const { nodes, materials } = useGLTF('../../public/models/WawaOffice.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes['01_office'].geometry} material={materials['01']} />
@@ -17,6 +18,6 @@ function Ofiice(props) {
   )
 }
 
-useGLTF.preload('./models/WawaOffice.glb')
+useGLTF.preload('../../public/models/WawaOffice.glb')
 
 export default Ofiice;
