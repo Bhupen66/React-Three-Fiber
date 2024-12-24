@@ -5,7 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import lerp from "lerp"
 import BackfaceMaterial from "./BackfaceMaterial"
 import RefractionMaterial from "./RefractionMaterial"
-import { useBlock } from "../blocks"
+import { useBlock } from "../Blocks"
 import state from "../Store"
 
 const dummy = new Object3D()
