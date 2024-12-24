@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Canvas } from '@react-three/fiber'
 import { Environment, OrbitControls, Stars } from '@react-three/drei'
-import Earth from '../public/Earth'
+import Earth from '../public/Santa'
 
 function App() {
 
