@@ -5,7 +5,6 @@ Command: npx gltfjsx@6.5.3 WawaOffice.glb
 
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
-import Ofiice from '../../public/models/WawaOffice.glb'
 
 function Ofiice(props) {
   const { nodes, materials } = useGLTF('../../public/models/WawaOffice.glb')

@@ -1,13 +1,15 @@
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, ScrollControls } from '@react-three/drei'
 import React from 'react'
 import Ofiice from './Office'
 
 function Exprience() {
     return (
         <>
-            <ambientLight intensity={0.5} />
+            <ambientLight intensity={1} />
             <OrbitControls />
-            <Ofiice />
+            <ScrollControls pages={3} damping={0.25} >
+                <Ofiice />
+            </ScrollControls>
         </>
     )
 }
