@@ -1,4 +1,5 @@
-import { FontLoader, Vector3, TextBufferGeometry } from "three"
+import { Vector3, TextBufferGeometry } from "three"
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js"
 import React, { useCallback, useRef } from "react"
 import { useLoader, useFrame } from "@react-three/fiber"
 import { useAsset } from "use-asset"

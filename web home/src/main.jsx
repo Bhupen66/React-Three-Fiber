@@ -7,7 +7,7 @@ import lerp from "lerp"
 import { Text, MultilineText } from "./components/Text"
 import Diamonds from "./diamonds/Diamonds"
 import Plane from "./components/Plane"
-import { Block, useBlock } from "./blocks"
+import { Block, useBlock } from "./Blocks"
 import state from "./store"
 import "./index.css"
 

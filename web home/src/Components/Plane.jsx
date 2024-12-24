@@ -2,7 +2,7 @@ import React, { forwardRef, useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import lerp from "lerp"
 import "./CustomMaterial"
-import { useBlock } from "../blocks"
+import { useBlock } from "../Blocks"
 import state from "../store"
 
 const Plane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, map, ...props }, ref) => {
