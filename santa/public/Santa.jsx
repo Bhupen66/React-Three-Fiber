@@ -10,7 +10,7 @@ Title: Santa Muerte & Requiem for the Sketchfab
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+function Santa(props) {
   const { nodes, materials } = useGLTF('/santa.gltf')
   return (
     <group {...props} dispose={null}>
@@ -34,3 +34,5 @@ export function Model(props) {
 }
 
 useGLTF.preload('/santa.gltf')
+
+export default Santa
