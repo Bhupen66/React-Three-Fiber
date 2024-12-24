@@ -9,7 +9,7 @@ import Diamonds from "./diamonds/Diamonds"
 import Plane from "./components/Plane"
 import { Block, useBlock } from "./blocks"
 import state from "./store"
-import "./styles.css"
+import "./index.css"
 
 function Startup() {
   const ref = useRef()
