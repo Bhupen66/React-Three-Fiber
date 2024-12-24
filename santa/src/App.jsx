@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-    <div className="bg-gradient-to-t from-red-600 to-pink-500 h-screen flex flex-col justify-center items-center">
+    <div className="bg-gradient-to-t from-pink-500 to-red-600  h-screen flex flex-col justify-center items-center">
     <h1 className="text-3xl font-bold =underline">
       Hello world!
     </h1>
