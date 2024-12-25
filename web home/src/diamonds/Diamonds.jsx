@@ -11,7 +11,10 @@ import state from "../Store"
 const dummy = new Object3D()
 export default function Diamonds() {
   const { nodes } = useLoader(GLTFLoader, "../../public/diamond.glb")
-  useLayoutEffect(() => nodes.pCone1_lambert1_0.geometry.center(), [])
+  useLayoutEffect(() => {
+    nodes.pCone1_lambert1_0.geometry.center()
+    return undefined // Explicitly return undefined
+  }, [])
 
   const { size, gl, scene, camera, clock } = useThree()
   const { contentMaxWidth, sectionHeight, mobile } = useBlock()
