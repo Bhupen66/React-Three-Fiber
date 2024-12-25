@@ -5,12 +5,12 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import lerp from "lerp"
 import BackfaceMaterial from "./BackfaceMaterial"
 import RefractionMaterial from "./RefractionMaterial"
-import { useBlock } from "../Blocks"
+import { useBlock } from "../blocks"
 import state from "../Store"
 
 const dummy = new Object3D()
 export default function Diamonds() {
-  const { nodes } = useLoader(GLTFLoader, "../../public/diamond.glb")
+  const { nodes } = useLoader(GLTFLoader, "/diamond.glb")
   useLayoutEffect(() => nodes.pCone1_lambert1_0.geometry.center(), [])
 
   const { size, gl, scene, camera, clock } = useThree()
