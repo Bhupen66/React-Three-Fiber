@@ -21,7 +21,7 @@ import state from "../Store"
 const dummy = new Object3D()
 
 export default function Satan() {
-  const { nodes } = useLoader(GLTFLoader, "../../public/satan.gltf")
+  const { nodes } = useLoader(GLTFLoader, "/public/satan.gltf")
   useLayoutEffect(() => nodes.pCone1_lambert1_0.geometry.center(), [])
 
   const { size, gl, scene, camera, clock } = useThree()

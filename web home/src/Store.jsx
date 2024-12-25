@@ -59,16 +59,16 @@ const state = {
   diamonds: [
     { x: 2, offset: 1.1, pos: new Vector3(), scale: 1.8, factor: 2.1 },
     { x: -5, offset: 2, pos: new Vector3(), scale: 1.8, factor: 2.5 },
-    { x: 0, offset: 3.2, pos: new Vector3(), scale: 1.8, factor: 1.75 },
+    // { x: 0, offset: 3.2, pos: new Vector3(), scale: 1.8, factor: 1.75 },
     { x: 0, offset: 4, pos: new Vector3(), scale: 1.8, factor: 2.5 },
     { x: 2, offset: 5.5, pos: new Vector3(), scale: 2.25, factor: 0.85 },
     { x: -5, offset: 7, pos: new Vector3(), scale: 1.8, factor: 2 },
-    { x: 0, offset: 8, pos: new Vector3(), scale: 2.5, factor: 6 }
+    // { x: 0, offset: 8, pos: new Vector3(), scale: 2.5, factor: 6 }
   ],
   diamonds1: [
     { x: 0, offset: 3.2, pos: new Vector3(), scale: 1.8, factor: 1.75 }
   ],
-  satan: [
+  Satan: [
     
     { x: 0, offset: 8, pos: new Vector3(), scale: 2.5, factor: 6 }
   ],

@@ -47,38 +47,40 @@ export default function Diamonds1() {
 
   
   useFrame(() => {
-    state.diamonds.forEach((data, i) => {
-      const t = clock.getElapsedTime() / 2
-      const { x, offset, scale, factor } = data
-      const s = (contentMaxWidth / 35) * scale
-      data.pos.set(mobile ? 0 : x, lerp(data.pos.y, -sectionHeight * offset * factor + (state.top.current / state.zoom) * factor, 0.1), 0)
-      dummy.position.copy(data.pos)
-      if (i === state.diamonds.length - 1) dummy.rotation.set(0, t, 0)
-      else dummy.rotation.set(t, t, t)
-      dummy.scale.set(s, s, s)
-      dummy.updateMatrix()
-      model.current.setMatrixAt(i, dummy.matrix)
-      model.current.instanceMatrix.needsUpdate = true
-    })
+    if (model.current) {
+      state.diamonds.forEach((data, i) => {
+        const t = clock.getElapsedTime() / 2
+        const { x, offset, scale, factor } = data
+        const s = (contentMaxWidth / 35) * scale
+        data.pos.set(mobile ? 0 : x, lerp(data.pos.y, -sectionHeight * offset * factor + (state.top.current / state.zoom) * factor, 0.1), 0)
+        dummy.position.copy(data.pos)
+        if (i === state.diamonds.length - 1) dummy.rotation.set(0, t, 0)
+        else dummy.rotation.set(t, t, t)
+        dummy.scale.set(s, s, s)
+        dummy.updateMatrix()
+        model.current.setMatrixAt(i, dummy.matrix)
+        model.current.instanceMatrix.needsUpdate = true
+      })
 
-    gl.autoClear = false
-    camera.layers.set(0)
-    gl.setRenderTarget(envFbo)
-    gl.clearColor()
-    gl.render(scene, camera)
-    gl.clearDepth()
-    camera.layers.set(1)
-    model.current.material = backfaceMaterial
-    gl.setRenderTarget(backfaceFbo)
-    gl.clearDepth()
-    gl.render(scene, camera)
-    camera.layers.set(0)
-    gl.setRenderTarget(null)
-    gl.render(scene, camera)
-    gl.clearDepth()
-    camera.layers.set(1)
-    model.current.material = refractionMaterial
-    gl.render(scene, camera)
+      gl.autoClear = false
+      camera.layers.set(0)
+      gl.setRenderTarget(envFbo)
+      gl.clearColor()
+      gl.render(scene, camera)
+      gl.clearDepth()
+      camera.layers.set(1)
+      model.current.material = backfaceMaterial
+      gl.setRenderTarget(backfaceFbo)
+      gl.clearDepth()
+      gl.render(scene, camera)
+      camera.layers.set(0)
+      gl.setRenderTarget(null)
+      gl.render(scene, camera)
+      gl.clearDepth()
+      camera.layers.set(1)
+      model.current.material = refractionMaterial
+      gl.render(scene, camera)
+    }
   }, 1)
 
   return (
