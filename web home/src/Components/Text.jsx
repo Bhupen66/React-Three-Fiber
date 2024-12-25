@@ -13,7 +13,7 @@ function Text({ children, size = 1, left, right, top, bottom, color = "white", o
       console.error(`There was an error loading ${url}`);
     };
   });
-  const geom = useAsset(() => new Promise((res) => res(new TextGeometry(children, { font: data, size: 1, height, curveSegments: 32 }))), [children])
+  const geom = useAsset(() => new Promise((res) => res(new TextGeometry(children, { font: data, size: 1, depth: height, curveSegments: 32 }))), [children])
   const onUpdate = useCallback(
     (self) => {
       const box = new Vector3()

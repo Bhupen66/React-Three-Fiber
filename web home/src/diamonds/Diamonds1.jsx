@@ -22,7 +22,11 @@ const dummy = new Object3D()
 
 export default function Diamonds1() {
   const { nodes } = useLoader(GLTFLoader, "../../public/diamond1.glb")
-  useLayoutEffect(() => nodes.pCone1_lambert1_0.geometry.center(), [])
+  useLayoutEffect(() => {
+    if (nodes.pCone1_lambert1_0) {
+      nodes.pCone1_lambert1_0.geometry.center()
+    }
+  }, [])
 
   const { size, gl, scene, camera, clock } = useThree()
   const { contentMaxWidth, sectionHeight, mobile } = useBlock()
@@ -77,6 +81,15 @@ export default function Diamonds1() {
     gl.render(scene, camera)
   }, 1)
 
-  return <instancedMesh ref={model} layers={1} args={[nodes.pCone1_lambert1_0.geometry, null, state.diamonds.length]} position={[0, 0, 50]} />
+  return (
+    nodes.pCone1_lambert1_0 ? (
+      <instancedMesh
+        ref={model}
+        layers={1}
+        args={[nodes.pCone1_lambert1_0.geometry, null, state.diamonds.length]}
+        position={[0, 0, 50]}
+      />
+    ) : null
+  )
 }
 
