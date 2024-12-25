@@ -20,7 +20,7 @@ import state from "../Store"
 
 const dummy = new Object3D()
 
-export default function Diamonds1() {
+export default function Satan() {
   const { nodes } = useLoader(GLTFLoader, "../../public/satan.gltf")
   useLayoutEffect(() => nodes.pCone1_lambert1_0.geometry.center(), [])
 

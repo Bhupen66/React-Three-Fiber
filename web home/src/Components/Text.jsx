@@ -10,7 +10,7 @@ import state from "../Store"
 function Text({ children, size = 1, left, right, top, bottom, color = "white", opacity = 1, height = 0.01, layers = 0, font = "/MOONGET_Heavy.blob", ...props }) {
   const data = useLoader(FontLoader, font, (loader) => {
     loader.manager.onError = (url) => {
-      console.error(`There was an error loading ${url}`);
+      console.error(`There was an error loading ../../public/satan.gltf`);
     };
   });
   const geom = useAsset(() => new Promise((res) => res(new TextGeometry(children, { font: data, size: 1, depth: height, curveSegments: 32 }))), [children])
