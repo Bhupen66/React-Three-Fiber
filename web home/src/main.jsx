@@ -6,6 +6,8 @@ import { TextureLoader, LinearFilter } from "three"
 import lerp from "lerp"
 import { Text, MultilineText } from "./Components/Text"
 import Diamonds from "./diamonds/Diamonds"
+import Diamonds1 from "./diamonds/Diamonds1"
+import Santa from "./diamonds/Satan"
 import Plane from "./components/Plane"
 import { Block, useBlock } from "./blocks"
 import state from "./Store"
@@ -103,10 +105,17 @@ function App() {
       <Canvas linear dpr={[1, 2]} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
         <Suspense fallback={<Html center className="loading" children="Loading..." />}>
           <Content />
-          <Diamonds />
+          <Diamonds1 />
           <Startup />
         </Suspense>
       </Canvas>
+      <Canvas linear dpr={[1, 2]} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
+          <Suspense fallback={<Html center className="loading" children="Loading..." />}>
+            <Content />
+            <Santa />
+            <Startup />
+          </Suspense>
+        </Canvas>
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
         {new Array(state.sections).fill().map((_, index) => (
           <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} />

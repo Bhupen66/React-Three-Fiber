@@ -65,6 +65,13 @@ const state = {
     { x: -5, offset: 7, pos: new Vector3(), scale: 1.8, factor: 2 },
     { x: 0, offset: 8, pos: new Vector3(), scale: 2.5, factor: 6 }
   ],
+  diamonds1: [
+    { x: 0, offset: 3.2, pos: new Vector3(), scale: 1.8, factor: 1.75 }
+  ],
+  satan: [
+    
+    { x: 0, offset: 8, pos: new Vector3(), scale: 2.5, factor: 6 }
+  ],
   top: createRef()
 }
 
