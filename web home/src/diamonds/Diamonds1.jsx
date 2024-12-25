@@ -22,11 +22,19 @@ const dummy = new Object3D()
 
 export default function Diamonds1() {
   const { nodes } = useLoader(GLTFLoader, "../../public/diamond1.glb")
+  console.log(nodes) // Debug the structure of nodes
   useLayoutEffect(() => {
     if (nodes.pCone1_lambert1_0) {
-      nodes.pCone1_lambert1_0.geometry.center()
+      nodes.pCone1_lambert1_0.geometry.center() // Update this line based on the correct structure
+    } else {
+      console.error("Node 'pCone1_lambert1_0' not found in the loaded GLTF model.")
     }
+    return undefined // Explicitly return undefined
   }, [])
+
+  if (!nodes.pCone1_lambert1_0) {
+    return <></> // Return an empty fragment if the node is not found
+  }
 
   const { size, gl, scene, camera, clock } = useThree()
   const { contentMaxWidth, sectionHeight, mobile } = useBlock()
@@ -48,7 +56,7 @@ export default function Diamonds1() {
   
   useFrame(() => {
     if (model.current) {
-      state.diamonds.forEach((data, i) => {
+      state.diamonds1.forEach((data, i) => {
         const t = clock.getElapsedTime() / 2
         const { x, offset, scale, factor } = data
         const s = (contentMaxWidth / 35) * scale
@@ -69,7 +77,7 @@ export default function Diamonds1() {
       gl.render(scene, camera)
       gl.clearDepth()
       camera.layers.set(1)
-      model.current.material = backfaceMaterial
+      if (model.current) model.current.material = backfaceMaterial
       gl.setRenderTarget(backfaceFbo)
       gl.clearDepth()
       gl.render(scene, camera)
@@ -78,20 +86,13 @@ export default function Diamonds1() {
       gl.render(scene, camera)
       gl.clearDepth()
       camera.layers.set(1)
-      model.current.material = refractionMaterial
+      if (model.current) model.current.material = refractionMaterial
       gl.render(scene, camera)
     }
   }, 1)
 
+
   return (
-    nodes.pCone1_lambert1_0 ? (
-      <instancedMesh
-        ref={model}
-        layers={1}
-        args={[nodes.pCone1_lambert1_0.geometry, null, state.diamonds.length]}
-        position={[0, 0, 50]}
-      />
-    ) : null
+    <instancedMesh ref={model} layers={1} args={[nodes.pCone1_lambert1_0.geometry, null, state.diamonds1.length]} position={[0, 0, 50]} />
   )
 }
-
