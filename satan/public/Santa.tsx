@@ -9,9 +9,20 @@ Title: Santa Muerte & Requiem for the Sketchfab
 
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
+import * as THREE from 'three'
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader'
 
-function Santa(props) {
-  const { nodes, materials } = useGLTF('/santa.gltf')
+type GLTFResult = GLTF & {
+  nodes: {
+    [key: string]: THREE.Mesh
+  }
+  materials: {
+    [key: string]: THREE.Material
+  }
+}
+
+function Santa(props: JSX.IntrinsicElements['group']) {
+  const { nodes, materials } = useGLTF('/santa.gltf') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
