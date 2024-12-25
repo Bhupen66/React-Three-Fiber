@@ -57,8 +57,8 @@ function Content() {
     <>
       <Block factor={1} offset={0}>
         <Block factor={1.2}>
-          <Text left size={w * 0.15} position={[-w / 3.2, 0.5, -1]} color="#d40749">
-            MOKSHA
+          <Text left size={w * 0.065} position={[-w / 3.2, 0.5, -1]} color="#d40749">
+            Event-Orchestrator 
           </Text>
         </Block>
         <Block factor={1.0}>
@@ -93,6 +93,13 @@ function App() {
   useEffect(() => void onScroll({ target: scrollArea.current }), [])
   return (
     <>
+      <Canvas linear dpr={[1, 2]} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
+        <Suspense fallback={<Html center className="loading" children="Loading..." />}>
+          <Content />
+          <Diamonds />
+          <Startup />
+        </Suspense>
+      </Canvas>
       <Canvas linear dpr={[1, 2]} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
         <Suspense fallback={<Html center className="loading" children="Loading..." />}>
           <Content />
