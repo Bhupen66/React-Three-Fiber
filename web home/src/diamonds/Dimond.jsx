@@ -11,7 +11,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/diamond_engagement_ring.glb')
+  const { nodes, materials } = useGLTF('../../public/diamond1.glb')
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -22,4 +22,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/diamond_engagement_ring.glb')
+useGLTF.preload('../../public/diamond1.glb')
