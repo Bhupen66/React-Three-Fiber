@@ -1,10 +1,12 @@
+
 import React from 'react'
+import CanvasContainer from './Components/CanvasContainer'
 
 function App() {
 
   return (
     <>
-      <h1 className='bg-red-700'>React App</h1>
+    <CanvasContainer />
     </>
   )
 }
