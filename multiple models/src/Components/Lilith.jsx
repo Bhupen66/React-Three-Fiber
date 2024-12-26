@@ -17,13 +17,31 @@ function Model(props) {
   const { nodes, materials } = useGLTF('/lilith.glb')
   const tl = gsap.timeline();
   const { camera } = useThree()
+  const element = document.createElement('div'); // Define the element variable
   console.log(camera.position)
 
   useLayoutEffect(() => {
     
-    tl.to(camera.position, { x:5, y:5, z:2 }) 
+    // tl.to(camera.position, { x:2, y:1, z:-1 },) 
+    // tl.to(element, 2, {rotationY:-Math.PI / 0.5, transformOrigin:"left 50%"});
+    // tl.to(camera.position, { x:-1.2203259036367362, y :-1.7496415862987413, z : -6.938216066180511 })
+    tl.to(camera.position,{
+      scrollTrigger:{
+        x:1.4976787583632525, y:1.2942759066360573,z:3.766467791651196,
+        trigger:".about",
+        start:"top left",
+        end:"+=1000",
+        scrub:true,
+        immediateRender:false,
+
+      }
+    })
+
+    // tl.to(camera.position, { x:1.4976787583632525, y:1.2942759066360573,z:3.766467791651196   })  
+    // about 
+
   },
-  {}
+  []
 );
 
 
@@ -33,7 +51,11 @@ function Model(props) {
   return (
     <group {...props} dispose={null} >
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group position={[-4.5, 2.5, 3.7  ]} rotation-x={-Math.PI / 0.5} scale={[4, 4, 4]}>
+        <group position={[-5.5, 2.5, 3.7  ]} scale={[4, 4, 4]}>
+        
+        {/* <group position={[-2.4976787583632525,0.2942759066360573,3.766467791651196 ]} scale={[4, 4, 4]}> */}
+        
+        {/* <group position={[5.5, -2.5, 0.7]} rotation-x={Math.PI * 0.51} scale={[4, 4, 4]}> */}
           <mesh geometry={nodes.Object_4.geometry} material={materials.Body} />
           <mesh geometry={nodes.Object_5.geometry} material={materials.Body_0} />
           <mesh geometry={nodes.Object_6.geometry} material={materials.Body_1} />
