@@ -1,15 +1,16 @@
 import { Canvas } from '@react-three/fiber';
 import React from 'react'
+import Lilith from './Lilith';
+import { OrbitControls } from '@react-three/drei';
 
 function CanvasContainer() {
     return (
         <div className='canvas-container w-full h-screen'> 
 
             <Canvas>
-                <mesh>
-                    <boxGeometry args={[1, 1, 1]} />
-                    <meshStandardMaterial color='hotpink' />
-                </mesh>
+                <OrbitControls  />
+                <ambientLight  />
+                <Lilith />
             </Canvas>
         </div>
     )
