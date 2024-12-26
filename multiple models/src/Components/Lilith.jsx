@@ -15,7 +15,7 @@ function Model(props) {
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group position={[0, -0.021, 1.017]} rotation-x={-Math.PI / 0.5} scale={[3, 3, 3]}>
+        <group position={[-4.5, 2.5, 3]} rotation-x={-Math.PI / 0.5} scale={[4, 4, 4]}>
           <mesh geometry={nodes.Object_4.geometry} material={materials.Body} />
           <mesh geometry={nodes.Object_5.geometry} material={materials.Body_0} />
           <mesh geometry={nodes.Object_6.geometry} material={materials.Body_1} />
