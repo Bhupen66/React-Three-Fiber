@@ -16,7 +16,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // Source : https://sketchfab.com/3d-models/air-jordan-1-a4b434181fbb48008ad460722fd53725
 export const Jordan = ({ ...props }) => {
-  const { nodes, materials } = useGLTF("/air_jordan_1.glb") as JordanGLTF;
+  const { nodes, materials } = useGLTF("/air_jordan_1.glb") as unknown as JordanGLTF;
   const jordans = useRef(null!);
 
   const { scene, camera } = useThree();
