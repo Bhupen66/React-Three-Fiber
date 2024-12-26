@@ -2,6 +2,8 @@ import { Canvas } from '@react-three/fiber';
 import React from 'react'
 import Lilith from './Lilith';
 import { OrbitControls } from '@react-three/drei';
+import Behemot from './Behemot';
+import Joueney from './Joueney';
 
 function CanvasContainer() {
     return (
@@ -13,6 +15,8 @@ function CanvasContainer() {
                     <OrbitControls />
                     <ambientLight />
                     <Lilith />
+                    <Joueney />
+                    <Behemot />
                 </Canvas>
             </div>
         </>

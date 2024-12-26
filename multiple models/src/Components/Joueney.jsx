@@ -10,10 +10,10 @@ Title: Journey - character clothing concept
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+function Model(props) {
   const { nodes, materials } = useGLTF('/journey_-_character_clothing_concept.glb')
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[-4.5, 2.5, 3]} scale={[0.01, 0.01, 0.01]}>
       <group position={[0, 0, 94.99]} scale={[0.901, 1, 1]}>
         <mesh geometry={nodes.polySurface1_lambert4_0.geometry} material={materials.lambert4} position={[9.871, 145.702, -37.437]} rotation={[0.642, -0.478, 0.756]} scale={11.004} />
         <mesh geometry={nodes.polySurface2_lambert4_0.geometry} material={materials.lambert4} position={[9.871, 145.701, -37.437]} rotation={[0.641, -0.527, -0.152]} scale={11.004} />
@@ -65,3 +65,5 @@ export function Model(props) {
 }
 
 useGLTF.preload('/journey_-_character_clothing_concept.glb')
+
+export default Model;

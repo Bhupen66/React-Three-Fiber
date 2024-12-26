@@ -12,7 +12,7 @@ import { useGraph } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
 
-export function Model(props) {
+ function Model(props) {
   const group = React.useRef()
   const { scene, animations } = useGLTF('/behemot_cat.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
@@ -230,9 +230,6 @@ export function Model(props) {
                       <mesh name="Skull_Outer_Cat_Material_0" geometry={nodes.Skull_Outer_Cat_Material_0.geometry} material={materials.Cat_Material} />
                     </group>
                   </group>
-                  <skinnedMesh name="Object_7" geometry={nodes.Object_7.geometry} material={materials.Cat_Material} skeleton={nodes.Object_7.skeleton} />
-                  <skinnedMesh name="Object_9" geometry={nodes.Object_9.geometry} material={materials.Cat_Material} skeleton={nodes.Object_9.skeleton} />
-                  <skinnedMesh name="Object_11" geometry={nodes.Object_11.geometry} material={materials.Cat_Material} skeleton={nodes.Object_11.skeleton} />
                 </group>
               </group>
             </group>
@@ -244,3 +241,5 @@ export function Model(props) {
 }
 
 useGLTF.preload('/behemot_cat.glb')
+
+export default Model;
