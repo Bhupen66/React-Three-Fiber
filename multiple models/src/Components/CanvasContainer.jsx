@@ -5,14 +5,19 @@ import { OrbitControls } from '@react-three/drei';
 
 function CanvasContainer() {
     return (
-        <div className='canvas-container w-full h-screen'> 
+        <>
+            <div className='text-center text-3xl w-full h-screen font-bold mt-4'>Lilith 3D Model
 
-            <Canvas>
-                <OrbitControls  />
-                <ambientLight  />
-                <Lilith />
-            </Canvas>
-        </div>
+          
+            <div className=''>
+                <Canvas>
+                    <OrbitControls />
+                    <ambientLight />
+                    <Lilith />
+                </Canvas>
+            </div>
+            </div>
+        </>
     )
 }
 

@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 function Model(props) {
   const { nodes, materials } = useGLTF('/journey_-_character_clothing_concept.glb')
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[2,1,-1]} rotation-X={[Math.PI ]} >
       <group position={[0, 0, 94.99]} scale={[0.901, 1, 1]}>
         <mesh
           castShadow
