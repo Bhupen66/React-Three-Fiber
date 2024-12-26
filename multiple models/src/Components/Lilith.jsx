@@ -9,13 +9,15 @@ Title: 𝕷𝖎𝖑𝖎𝖙𝖍
 
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
+import gsap from 'gsap'
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/lilith.glb')
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} >
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group position={[-4.5, 2.5, 3]} rotation-x={-Math.PI / 0.5} scale={[4, 4, 4]}>
+        <group position={[-4.5, 2.5, 3.7  ]} rotation-x={-Math.PI / 0.5} scale={[4, 4, 4]}>
           <mesh geometry={nodes.Object_4.geometry} material={materials.Body} />
           <mesh geometry={nodes.Object_5.geometry} material={materials.Body_0} />
           <mesh geometry={nodes.Object_6.geometry} material={materials.Body_1} />
