@@ -11,7 +11,11 @@ function CanvasContainer() {
 
           
             <div className=' w-full bg-gradient-to-tr bg-black to-pink-400 h-screen'>
-                <Canvas >
+                <Canvas camera={{
+                    position:[ 
+                        -7.013131774130275,1.0225948681149972,5.200194472
+                    ],
+                }} >
                     <OrbitControls />
                     <ambientLight />
                     <Lilith />

@@ -11,10 +11,20 @@ import React, { useLayoutEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import gsap from 'gsap'
 import { useThree } from '@react-three/fiber'
+import { use } from 'react'
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/lilith.glb')
-  // const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+  const tl = gsap.timeline();
+  const { camera } = useThree()
+
+  useLayoutEffect(() => {
+    tl.to(camera.position, { x: 0, y: 0, z: 0, })
+  },
+  {}
+);
+
+
  
 
 
