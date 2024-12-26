@@ -7,13 +7,19 @@ Source: https://sketchfab.com/3d-models/lilith-823bb66e894d4d31bfa4e3b238902c8a
 Title: 𝕷𝖎𝖑𝖎𝖙𝖍
 */
 
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import gsap from 'gsap'
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/lilith.glb')
   const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+
+  useLayoutEffect(() => {
+    
+  })
+
+
   return (
     <group {...props} dispose={null} >
       <group rotation={[-Math.PI / 2, 0, 0]}>
