@@ -17,9 +17,11 @@ function Model(props) {
   const { nodes, materials } = useGLTF('/lilith.glb')
   const tl = gsap.timeline();
   const { camera } = useThree()
+  console.log(camera.position)
 
   useLayoutEffect(() => {
-    tl.to(camera.position, { x: 0, y: 0, z: 0, })
+    
+    tl.to(camera.position, { x:5, y:5, z:2 }) 
   },
   {}
 );
