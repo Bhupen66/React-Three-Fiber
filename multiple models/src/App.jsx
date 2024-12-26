@@ -6,11 +6,7 @@ function App() {
   return (
     <>
       <div className="bg-gray-100">
-        <div className='h-screen'>
-          <CanvasContainer />
-        </div>
-        {/* Header */}
-        <div className='header-section bg-black text-white p-4'>
+         <div className='header-section bg-black text-white p-4'>
           <h1 className="text-3xl font-bold">Header Section</h1>
           <p className="mt-2">Welcome to our website. We are glad to have you here.</p>
           <nav className="mt-4">
@@ -20,10 +16,13 @@ function App() {
             <a href="#contact" className="hover:underline">Contact</a>
           </nav>
         </div>
+        <div className='h-screen'>
+          <CanvasContainer />
+        </div>
+        {/* Header */}
+       
         {/* hero */}
         <div className='hero-section bg-gray-800 text-white p-8' id="hero">
-          <h1 className="text-4xl font-bold">Hero Section</h1>
-          <p className="mt-4">Discover the amazing features we offer.</p>
           <button className="mt-6 bg-white text-black px-4 py-2 rounded">Learn More</button>
         </div>
         {/* about */}

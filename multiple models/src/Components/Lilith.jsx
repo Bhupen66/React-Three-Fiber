@@ -10,14 +10,12 @@ Title: 𝕷𝖎𝖑𝖎𝖙𝖍
 import React, { useLayoutEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import gsap from 'gsap'
+import { useThree } from '@react-three/fiber'
 
 function Model(props) {
   const { nodes, materials } = useGLTF('/lilith.glb')
-  const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-
-  useLayoutEffect(() => {
-    
-  })
+  // const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+ 
 
 
   return (
