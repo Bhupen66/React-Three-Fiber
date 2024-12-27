@@ -3,7 +3,7 @@ import React from 'react'
 function Header() {
     return (
         <>
-            <nav className="bg-transparent p-4 flex justify-between items-center"> 
+            <nav className="bg-gradient-to-r from-gray-900 via-gray-800 to-black p-4 flex justify-between items-center"> 
                 <div className="text-white text-lg font-bold">
                     Bhupen
                 </div>
