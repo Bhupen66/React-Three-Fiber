@@ -60,6 +60,7 @@ function Main() {
         </div>
       </section>
       <section className='section2 w-100vh h-screen'>
+  
       </section>
     </>
   )
