@@ -5,20 +5,39 @@ import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Image, Environment, ScrollControls, useScroll, useTexture } from '@react-three/drei'
 import { easing } from 'maath'
+import { GiCancel } from "react-icons/gi";
 import './Utili.jsx'
 
+const black = '#000000'; // Define the black color variable
+
 const Gallery = () => (
-  <div className="bg-gray-900 h-screen w-screen">
-  <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
-    <fog attach="fog" args={['#a79', 8.5, 12]} />
-    <ScrollControls pages={4} infinite>
-      <Rig rotation={[0, 0, 0.15]}>
-        <Carousel />
-      </Rig>
-      <Banner position={[0, -0.15, 0]} />
-    </ScrollControls>
-    <Environment preset="dawn" background blur={0.5} />
-  </Canvas>
+  <div className="flex bg-gray-900 h-screen w-screen">
+    <div className=" absolute  p-4 mt-24">
+      <a 
+       href="/"
+       target=""
+       rel="noopener noreferrer"
+       className="transition-transform transform hover:scale-125  hover:text-blue-500 text-gray-400"
+       >
+        
+      <GiCancel size={28} color={black}  />
+      </a>
+
+    </div>
+    <div className='absolite top-0 right-0 w-full'>
+
+      <Canvas camera={{ position: [0, 0, 100], fov: 15 }}>
+        <fog attach="fog" args={['#11171F', 8.5, 12]} />
+        <ScrollControls pages={4} infinite>
+          <Rig rotation={[0, 0, 0.15]}>
+            <Carousel />
+          </Rig>
+          <Banner position={[0, -0.15, 0]} />
+        </ScrollControls>
+        <Environment preset="dawn" background blur={0.5} />
+      </Canvas>
+    </div>
+
   </div>
 )
 
