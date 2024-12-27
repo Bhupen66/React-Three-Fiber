@@ -38,13 +38,15 @@ function Main() {
         gsap.to(img, { scale: 1, duration: 0.5 });
       });
     });
+
+    
   }, []);
 
   return (
     <>
       <section className='section flex justify-center content-center h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white overflow-hidden'> 
         <div className='flex flex-col justify-center content-center absolute'>
-          <p className='flex text-7xl font-bold pb-10 pt-80 content-center text-center'>
+          <p className='event flex text-7xl font-bold pb-10 pt-80 content-center text-center'>
             Event Orchestrator
           </p>
         </div>
