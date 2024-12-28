@@ -1,30 +1,31 @@
 import React, { useEffect } from 'react'
+import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Image from './Images'
 
 function Main() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     const random = (min, max) => {
-      return Math.floor(Math.random() * (max - min + 1)) + min
+      return min + (max - min) * Math.random();
     }
 
-    const tl = gsap.timeline({ 
-      scrollTrigger:{
+    const tl = gsap.timeline({
+      scrollTrigger: {
         trigger: '.section',
         start: 'top top',
         end: 'bottom center',
-        
         // pin: true,
         scrub: 1,
-      } 
+      }
     })
 
     gsap.utils.toArray(".img").forEach((target) => {
       tl.to(target, {
-        x: random(-3000, 3000),
-        y: random(-2000, 2000),
+        x: random(-2000, 2000),
+        y: random(-1000, 1000),
         stagger: 0.1,
         rotation: random(-700, 700),
       }, 0);
@@ -39,12 +40,33 @@ function Main() {
       });
     });
 
-    
+    gsap.to(".event", {
+      scale: 0,
+      scrollTrigger: {
+        start: () => tl.scrollTrigger.start,
+        end: "5%",
+        pin: ".event",
+        pinType: "transform",
+        scrub: 1,
+      },
+    });
+
+
   }, []);
+
+  useGSAP(() => {
+    gsap.from('.img-1', {
+      x:1200,
+      stagger:{
+        amount: 0.4
+      }
+    } 
+    )
+  })
 
   return (
     <>
-      <section className='section flex justify-center content-center h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white overflow-hidden'> 
+      <section className='section flex justify-center content-center h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white overflow-hidden'>
         <div className='flex flex-col justify-center content-center absolute'>
           <p className='event flex text-7xl font-bold pb-10 pt-80 content-center text-center'>
             Event Orchestrator
@@ -60,10 +82,17 @@ function Main() {
           {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZv65DV-ozP1hLRN_ed5M6NUmnR44x45JvhA&s" alt="" className="img h-52 w-52 object-cover transition-transform duration-500" />
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSubcWL0EnxRU-k6dy73U0ZNk0EFiqEY3tq7Q&s" alt="" className="img h-52 w-52 object-cover transition-transform duration-500" /> */}
         </div>
+
+
+
+
+
       </section>
-      <section className='section2 w-100vh h-screen'>
-  
-      </section>
+      <div className='bg-gradient-to-r from-gray-900 via-gray-800 to-black h-scree py-[15rem] px-20'>
+        <div className="image-container w-[420px] overflow-hidden ">
+          <Image />
+        </div>
+      </div>
     </>
   )
 }
